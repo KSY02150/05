@@ -1,23 +1,17 @@
-//입력된 문자열에서 숫자의 개수 세기//
+//정수를 입력받아 1부터 입력 정수까지 더해서 그 결과를 출력//
 
 #include <stdio.h>
 
-int main(void)
-{
-    char c;
-    int num = 0;
+int main(void) {
+    int num, sum = 0;
 
-    printf("input the string : ");
+    printf("input the integer: ");
+    scanf("%d", &num);
 
-    while ((c = getchar()) != '\n') //문자열 입력받기
-    {
-        if (c >= '0' && c <= '9') //숫자인지 확인
-        {
-            num++; //숫자 개수 증가
-        }
+    for (int i = 1; i <= num; i++) {
+        sum += i;
     }
 
-    printf("The number of digits is : %d\n", num); //숫자 개수 출력
-    
+    printf("The result is %d\n", sum);
     return 0;
 }
