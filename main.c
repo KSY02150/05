@@ -1,20 +1,23 @@
-//입력 정수에 대한 절댓값 구하기//
+//입력된 문자열에서 숫자의 개수 세기//
 
 #include <stdio.h>
+
 int main(void)
 {
-    int num;
-    printf("input the integer: ");
-    scanf("%d", &num);
+    char c;
+    int num = 0;
 
-    if (num < 0)
+    printf("input the string : ");
+
+    while ((c = getchar()) != '\n') //문자열 입력받기
     {
-        num = -num;
-        printf("The absolute value is: %d\n", num);
+        if (c >= '0' && c <= '9') //숫자인지 확인
+        {
+            num++; //숫자 개수 증가
+        }
     }
-    else
-    {
-        printf("The absolute value is: %d\n", num);
-    }
+
+    printf("The number of digits is : %d\n", num); //숫자 개수 출력
+    
     return 0;
 }
