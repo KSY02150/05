@@ -1,25 +1,20 @@
-//입력 정수가 양수, 음수, 0인지 판단하여 출력하는 프로그램//
+//입력 정수에 대한 절댓값 구하기//
 
 #include <stdio.h>
-
-int main(void) {
+int main(void)
+{
     int num;
-
-    printf("input the integer :");
+    printf("input the integer: ");
     scanf("%d", &num);
 
-    if (num > 0)
+    if (num < 0)
     {
-        printf("Positive.\n");
-    }
-    else if (num < 0)
-    {
-        printf("Negative.\n");
+        num = -num;
+        printf("The absolute value is: %d\n", num);
     }
     else
     {
-        printf("Zero.\n");
+        printf("The absolute value is: %d\n", num);
     }
-
     return 0;
 }
