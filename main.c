@@ -1,17 +1,35 @@
-//정수를 입력받아 1부터 입력 정수까지 더해서 그 결과를 출력//
+//산술계산기 프로그램. 두 개의 정수와 연산자를 입력받고 계산값 출력//
 
 #include <stdio.h>
 
 int main(void) {
-    int num, sum = 0;
 
-    printf("input the integer: ");
-    scanf("%d", &num);
+    int a, b;
+    char op;
 
-    for (int i = 1; i <= num; i++) {
-        sum += i;
+    printf("enter the calulation: ");
+    scanf("%d %c %d", &a, &op, &b);
+
+    switch (op) {
+        case '+':
+            printf("%d + %d = %d\n", a, b, a + b);
+            break;
+        case '-':
+            printf("%d - %d = %d\n", a, b, a - b);
+            break;
+        case '*':
+            printf("%d * %d = %d\n", a, b, a * b);
+            break;
+        case '/':
+            if (b == 0) {
+                printf("Error: Division by zero is not allowed.\n");
+            } else {
+                printf("%d / %d = %d\n", a, b, a / b);
+            }
+            break;
+        default:
+            printf("Error: Invalid operator. Please use +, -, *, or /.\n");
+            break;
     }
-
-    printf("The result is %d\n", sum);
     return 0;
 }
